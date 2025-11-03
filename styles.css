@@ -1,37 +1,36 @@
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #f7f7f7;
-  padding: 50px;
+  background-color: #a268e8;  /* purple background */
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 #buttons {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  margin-top: 30px;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
-.btn, .stop {
-  padding: 15px 25px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  background-color: #3498db;
-  color: white;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background-color: #2980b9;
-}
-
+.btn,
 .stop {
-  background-color: #e74c3c;
+  background-color: #582c91;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  text-transform: lowercase;
+  transition: all 0.2s ease;
 }
 
+.btn:hover,
 .stop:hover {
-  background-color: #c0392b;
+  background-color: #6d38ad;
+  transform: scale(1.05);
 }
