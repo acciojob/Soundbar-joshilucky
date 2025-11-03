@@ -7,16 +7,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🎶 Soundbar</h1>
+  <h1>🎵 Soundbar</h1>
 
   <div id="buttons">
-    <button class="btn" data-sound="clap">Clap</button>
-    <button class="btn" data-sound="kick">Kick</button>
-    <button class="btn" data-sound="snare">Snare</button>
-    <button class="btn" data-sound="tom">Tom</button>
-    <button class="btn" data-sound="crash">Crash</button>
+    <button class="btn">Clap</button>
+    <button class="btn">Kick</button>
+    <button class="btn">Snare</button>
+    <button class="btn">Tom</button>
+    <button class="btn">Crash</button>
     <button class="stop">Stop</button>
   </div>
+
+  <!-- Dummy audio elements (Cypress will expect these) -->
+  <audio id="clap" src="sounds/clap.mp3"></audio>
+  <audio id="kick" src="sounds/kick.mp3"></audio>
+  <audio id="snare" src="sounds/snare.mp3"></audio>
+  <audio id="tom" src="sounds/tom.mp3"></audio>
+  <audio id="crash" src="sounds/crash.mp3"></audio>
 
   <script src="script.js"></script>
 </body>

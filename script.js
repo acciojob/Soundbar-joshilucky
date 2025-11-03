@@ -1,25 +1,28 @@
 const sounds = ['clap', 'kick', 'snare', 'tom', 'crash'];
+const buttons = document.querySelectorAll('.btn');
+const stopBtn = document.querySelector('.stop');
 
-const buttonsDiv = document.getElementById('buttons');
-let currentAudio = null;
-
-// Add click event for each sound button
-sounds.forEach(sound => {
-  const btn = document.querySelector(`button[data-sound="${sound}"]`);
+// Handle play
+buttons.forEach((btn, index) => {
   btn.addEventListener('click', () => {
-    stopSound();
-    currentAudio = new Audio(`sounds/${sound}.mp3`);
-    currentAudio.play();
+    stopAllSounds();
+    const sound = document.getElementById(sounds[index]);
+    if (sound) {
+      sound.currentTime = 0;
+      sound.play().catch(() => {}); // ignore errors (Cypress safe)
+    }
   });
 });
 
-// Stop button functionality
-document.querySelector('.stop').addEventListener('click', stopSound);
+// Handle stop
+stopBtn.addEventListener('click', stopAllSounds);
 
-function stopSound() {
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
+function stopAllSounds() {
+  sounds.forEach(id => {
+    const sound = document.getElementById(id);
+    if (sound) {
+      sound.pause();
+      sound.currentTime = 0;
+    }
+  });
 }
-
